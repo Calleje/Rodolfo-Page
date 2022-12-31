@@ -1,4 +1,65 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.contenedor-inicio {
+  /* background-image: url(./Imagenes/Rodolfo-portada.jpg);
+  background-size: cover;
+  background-color: lightblue;
+  color:white;
+   */
+   margin: 0px;
+   padding:0px;
+
+  display: block;
+  background-color: lightblue;
+    width:100vw;
+    height:100vh; 
+}
+
+.contenedor-divisor{
+  margin: 0px;
+  padding: 10px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* con este controlo la alineacion vertical*/
+  align-items: center;
+  
+      width:100vw;
+    height:100vh; 
+    
+    background-color: lightblue;
+    
+    flex-wrap: wrap;
+}
+
+.contenedor-divisor h2{
+  border: 1px solid black;
+  border-radius: 15px;;
+  padding: 10px;
+  margin: 10px;
+  
+  background-color: lightgreen;
+  
+}
+
+.contenedor-divisor article{
+  border: 1px solid black;
+  background-color:lightcoral;
+  max-width:500px;
+  margin: 50px;
 }
