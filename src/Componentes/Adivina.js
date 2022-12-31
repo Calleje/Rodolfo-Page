@@ -15,6 +15,7 @@ const [estilo, setEstilo ] = useState(); {/*usa este estilo si gana*/}
 const [habilitar, setHabilitar] = useState(true); {/*habilita o desabilita el boton después de elegir una opción*/}
 
 
+
   function Random(){
     return Math.floor(Math.random()*3);
   }
