@@ -10,6 +10,7 @@ export default function App() {
           Welcome to <br /> Rodolfo page
         </h1>
         <h2>El lugar donde sucede la magia</h2>
+        <h2>PROBANDING</h2>
       </div>
       
       <div className='contenedor-divisor'>
