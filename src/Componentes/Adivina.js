@@ -4,8 +4,6 @@ import "../Hojas-de-estilo/Adivina.css";
 
 import { useState } from "react";
 
-import Apuesta from "./Apuesta.js";
-
 export default function Adivina() {
   const [respuesta, setRespuesta] = useState(1);
   const [resultado, setResultado] = useState("asdf");
@@ -20,9 +18,6 @@ export default function Adivina() {
     /*habilita o desabilita el boton después de elegir una opción*/
   }
 
-  /* para la apuesta que pone en el input */
-  const [apuesta, setApuesta] = useState(0);
-
   function Random() {
     return Math.floor(Math.random() * 3);
   }
@@ -32,11 +27,9 @@ export default function Adivina() {
       setResultado("Ganaste");
       setEstilo(vasoGana);
       setHabilitar(true);
-      <Apostar apuesta="hola" />;
     } else {
       setResultado("Perdiste");
       setHabilitar(true);
-      <Apostar apuesta="chau" />;
     }
     //tendria que reiniciar la respuesta para que no siga ganando
   }
@@ -44,7 +37,6 @@ export default function Adivina() {
   function Mezclar() {
     setRespuesta(Random());
     setHabilitar(false);
-    Apostar();
   }
 
   const vasoGana = {
@@ -53,28 +45,8 @@ export default function Adivina() {
 
   const disabled = false;
 
-  /* APOSTAR */
-  function Apostar() {
-    if (apuesta > 0) {
-      <Apuesta apostar={apuesta} />;
-    } else {
-      console.log("es menor a 0");
-    }
-  }
-
   return (
     <div className="App">
-      {/**APUESTA */}
-      <input
-        type="number"
-        placeholder="Ingrese su apuesta acá"
-        onChange={(e) => setApuesta(+e.target.value)}
-      />
-
-      <Apuesta apostar="123" />
-
-      {/** FIN APUESTA */}
-
       <button onClick={Mezclar}> Mezclar </button>
 
       <div className="vasos">
