@@ -3,17 +3,20 @@ import Adivina from "./Componentes/Adivina.js";
 import MayorMenor from "./Componentes/Mayor-Menor.js";
 import PPR from "./Componentes/Piedra-Papel-Ronchi.js";
 
+import Gotas from "./Imagenes/Gotas.svg";
+
 export default function App() {
   return (
     <div className="App">
       <div className="contenedor-inicio">
-        <h1>
-          Welcome to <br /> Rodolfo page
-        </h1>
-        <h2>El lugar donde sucede la magia</h2>
+        <div className="contenedor-inicio-texto">
+          <h2>Welcome to</h2>
+          <h1>RODOLFO</h1>
+          <h3>page</h3>
+        </div>
       </div>
 
-      <div className="contenedor-divisor">
+      <div className="contenedor-divisor introduccion">
         <h2>¿Que carajos es esto?</h2>
         <article>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -26,7 +29,8 @@ export default function App() {
         </article>
       </div>
 
-      <div className="contenedor-divisor">
+      <div className="contenedor-divisor moneda">
+        <img src={Gotas} />
         <h2> Rodolfokeins? </h2>
         <article>
           {" "}

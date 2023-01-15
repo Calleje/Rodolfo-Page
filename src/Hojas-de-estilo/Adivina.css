@@ -13,6 +13,11 @@
   padding: 10px;
 }
 
+.vaso {
+  display: flex;
+  flex-direction: column;
+}
+
 button {
   cursor: pointer;
   user-select: none;
@@ -20,4 +25,9 @@ button {
 
 button:disabled {
   /* pointer-events: none; */
+}
+
+img {
+  width: 100px;
+  height: 100px;
 }
