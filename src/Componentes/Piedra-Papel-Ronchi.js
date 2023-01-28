@@ -3,9 +3,16 @@ import "../Hojas-de-estilo/Piedra-Papel-Ronchi.css";
 
 export default function App() {
   const [maquina, setMaquina] = useState("asfd");
-  const [usuario, setUsuario] = useState("qwer");
+  const [usuario, setUsuario] = useState(
+    "Elegi una opción, dale no seas boludo"
+  );
 
   const [resultado, setResultado] = useState("zxcv");
+
+  {
+    /** Para mostrar u ocultar un tag */
+  }
+  const [show, setShow] = useState(false);
 
   function Random() {
     return Math.floor(Math.random() * 3);
@@ -17,53 +24,55 @@ export default function App() {
     } else if (Random() === 1) {
       setMaquina("Papel");
     } else {
-      setMaquina("Tijeras");
+      setMaquina("Ronchi");
     }
   }
 
   function Resultado() {
+    setShow(true);
     if (usuario === maquina) {
       setResultado("Empate");
     } else if (usuario === "Piedra") {
       if (maquina === "Papel") {
-        setResultado("Compu gano");
+        setResultado("Perdiste :(");
       } else {
-        setResultado("Ganaste");
+        setResultado(
+          "¡Ganaste! - La piedra le pegó en la cabeza a Ronchi causandole una conmoción cerebral"
+        );
       }
     }
 
     // Usuario = papel
     else if (usuario === "Papel") {
-      if (maquina === "Tijeras") {
-        setResultado("Compu gano");
+      if (maquina === "Ronchi") {
+        setResultado("Perdiste :( - Ronchi le gana a cualquier papel");
       } else {
-        setResultado("Ganaste");
+        setResultado("¡Ganaste!");
       }
     }
 
-    //Usuario = Tijeras
-    else if (usuario === "Tijeras") {
+    //Usuario = Ronchi
+    else if (usuario === "Ronchi") {
       if (maquina === "Piedra") {
-        setResultado("Compu gano");
+        setResultado(
+          "Perdiste :( - La piedra le pegó en la cabeza a Ronchi causandole una conmoción cerebral"
+        );
       } else {
-        setResultado("Ganaste");
+        setResultado("¡Ganaste! - Ronchi le gana a cualquier papel");
       }
     }
   }
-  
-  /** SEPARADOOOOOOOOOOOOOOOOOOOOOOOOOOOR */  
-  
+
+  /** SEPARADOOOOOOOOOOOOOOOOOOOOOOOOOOOR */
+
   return (
     <div className="App">
-    
-      <h2>maquina: {maquina} </h2>
-      <h2>usuario: {usuario}</h2>
-      <h2>resultado: {resultado}</h2>
-      
+      <h2 className="texto-PPR">{usuario}</h2>
       <button
         onClick={() => {
           EleccionMaquina();
           setUsuario("Piedra");
+          setShow(false);
         }}
       >
         Piedra
@@ -72,6 +81,7 @@ export default function App() {
         onClick={() => {
           EleccionMaquina();
           setUsuario("Papel");
+          setShow(false);
         }}
       >
         Papel
@@ -79,13 +89,19 @@ export default function App() {
       <button
         onClick={() => {
           EleccionMaquina();
-          setUsuario("Tijeras");
+          setUsuario("Ronchi");
+          setShow(false);
         }}
       >
-        Tijeras
+        Ronchi
       </button>
 
       <button onClick={Resultado}>Jugar</button>
+
+      {show && <h2 className="texto-PPR">Rodolfo eligio: {maquina} </h2>}
+      {/* <h2 className="texto-PPR">usuario: {usuario}</h2> */}
+
+      {show && <h2 className="texto-PPR">{resultado}</h2>}
     </div>
   );
 }

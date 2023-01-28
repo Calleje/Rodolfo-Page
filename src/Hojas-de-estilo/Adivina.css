@@ -21,6 +21,9 @@
 button {
   cursor: pointer;
   user-select: none;
+  padding: 10px;
+  font-weight: bold;
+  margin: 1px;
 }
 
 button:disabled {
@@ -28,6 +31,7 @@ button:disabled {
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: auto;
+  padding-left: 20px;
 }

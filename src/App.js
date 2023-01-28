@@ -31,7 +31,7 @@ export default function App() {
 
       <div className="contenedor-divisor moneda">
         <img src={Gotas} />
-        <h2> Rodolfokeins? </h2>
+        <h2> ¿Te acuerdas de Rodolfo? Volvió en forma de monedas! </h2>
         <article>
           {" "}
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -57,7 +57,7 @@ export default function App() {
       </div>
 
       <div className="contenedor-divisor">
-        <h2>Mayor o menor</h2>
+        <h2>Piedra, Papel o Ronchi</h2>
         <article> asdf sad fasd f</article>
         <PPR />
       </div>
