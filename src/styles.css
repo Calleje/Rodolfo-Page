@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: column;
 
-  padding-bottom: 159px;
+  padding-bottom: 227px;
   padding-left: 117px;
 }
 
@@ -51,7 +51,7 @@
 .contenedor-divisor {
   margin: 0px;
   padding: 0px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* con este controlo la alineacion vertical*/
@@ -66,7 +66,7 @@
 }
 
 .contenedor-divisor h2 {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
@@ -76,9 +76,9 @@
 }
 
 .contenedor-divisor article {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: lightcoral;
-  max-width: 600px;
+  max-width: 500px;
   margin: 50px;
   z-index: 99;
 
@@ -90,4 +90,35 @@
   z-index: 1;
   /* position: absolute; */
   height: auto;
+  padding: 0px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+.texto-inicio {
+  font-family: Ubuntu Mono, sans-serif;
+  font-size: 90px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Zilla+Slab+Highlight&display=swap");
+
+#rodolfo {
+  font-family: "Zilla Slab Highlight", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 115px;
+  color: #ffffff;
+}
+
+hr {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.moneda {
+
 }

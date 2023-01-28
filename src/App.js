@@ -10,9 +10,9 @@ export default function App() {
     <div className="App">
       <div className="contenedor-inicio">
         <div className="contenedor-inicio-texto">
-          <h2>Welcome to</h2>
-          <h1>RODOLFO</h1>
-          <h3>page</h3>
+          <h2 className="texto-inicio">Welcome to</h2>
+          <h1 id="rodolfo">RODOLFO</h1>
+          <h3 className="texto-inicio">page</h3>
         </div>
       </div>
 
@@ -44,17 +44,23 @@ export default function App() {
         </article>
       </div>
 
+      <hr />
+
       <div className="contenedor-divisor">
         <h2>Adivina donde esta la bola</h2>
         <article> asdf sad fasd f</article>
         <Adivina />
       </div>
 
+      <hr />
+
       <div className="contenedor-divisor">
         <h2>Mayor o menor</h2>
         <article> asdf sad fasd f</article>
         <MayorMenor />
       </div>
+
+      <hr />
 
       <div className="contenedor-divisor">
         <h2>Piedra, Papel o Ronchi</h2>
