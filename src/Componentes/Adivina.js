@@ -9,7 +9,7 @@ import Vasosinbola from "../Imagenes/Vaso-Sinbola.png";
 
 export default function Adivina() {
   const [respuesta, setRespuesta] = useState(1);
-  const [resultado, setResultado] = useState("asdf");
+  const [resultado, setResultado] = useState("Elegí un vaso");
 
   const [estilo, setEstilo] = useState();
   {
@@ -21,32 +21,47 @@ export default function Adivina() {
     /*habilita o desabilita el boton después de elegir una opción*/
   }
 
-  const [vaso, setVaso] = useState();
+  {
+    /** tomo la img con clase" vaso-eleccion" y le asigno como src un tipo de vaso segun gana o pierde: */
+  }
+
+  let vasoGanador = document.getElementsByClassName("vasos-eleccion");
+
+  {
+    /**OCULTAR O MOSTRAR RESULTADO */
+  }
+  const [show, setShow] = useState(false);
+
+  {
+    /**points events */
+  }
 
   function Random() {
     return Math.floor(Math.random() * 3);
   }
 
   function Resultado(opcion) {
+    setShow(true);
     if (opcion === respuesta) {
       setResultado("Ganaste");
-      setEstilo(vasoGana);
       setHabilitar(true);
     } else {
       setResultado("Perdiste");
       setHabilitar(true);
     }
-    //tendria que reiniciar la respuesta para que no siga ganando
+    vasoGanador[respuesta].src = Vasoconbola;
   }
 
   function Mezclar() {
+    vasoGanador[respuesta].src = Vasosinbola;
+    setShow(false);
     setRespuesta(Random());
     setHabilitar(false);
   }
 
-  const vasoGana = {
-    backgroundColor: "yellow",
-  };
+  // const vasoGana = {
+  //   backgroundColor: "yellow",
+  // };
 
   const disabled = false;
 
@@ -56,21 +71,20 @@ export default function Adivina() {
 
       <div className="vasos">
         <div className="vaso">
-          <img src={Vasosinbola} />
+          <img className="vasos-eleccion" src={Vasosinbola} />
           <button
             disabled={habilitar}
-            style={estilo}
+            style={{ estilo }}
             onClick={() => {
               Resultado(0);
             }}
           >
-            {" "}
-            Boton 1{" "}
+            Vaso 1
           </button>
         </div>
 
         <div className="vaso">
-          <img src={Vasosinbola} />
+          <img className="vasos-eleccion" src={Vasosinbola} />
           <button
             disabled={habilitar}
             style={estilo}
@@ -78,13 +92,12 @@ export default function Adivina() {
               Resultado(1);
             }}
           >
-            {" "}
-            Boton 2{" "}
+            Vaso 2
           </button>
         </div>
 
         <div className="vaso">
-          <img src={Vasosinbola} />
+          <img className="vasos-eleccion" src={Vasosinbola} />
           <button
             disabled={habilitar}
             style={estilo}
@@ -92,13 +105,12 @@ export default function Adivina() {
               Resultado(2);
             }}
           >
-            {" "}
-            Boton 3{" "}
+            Vaso 3
           </button>
         </div>
       </div>
-      <h3>la respuesta es el botón número: {respuesta}</h3>
-      <h3>{resultado}</h3>
+      {/* <h3>la respuesta es el botón número: {respuesta}</h3> */}
+      {show && <h3 id="bola-resultado">{resultado}</h3>}
     </div>
   );
 }

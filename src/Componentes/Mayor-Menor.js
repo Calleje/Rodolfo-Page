@@ -17,9 +17,9 @@ export default function App() {
     if (b === c) {
       return setMensaje("juga de nuevo");
     } else if (c > b) {
-      return setMensaje("ganaste");
+      return setMensaje("¡Ganaste!");
     } else {
-      return setMensaje("no ganaste");
+      return setMensaje("Perdiste :(");
     }
   }
 
@@ -27,9 +27,9 @@ export default function App() {
     if (b === c) {
       return setMensaje("juga de nuevo");
     } else if (c < b) {
-      return setMensaje("ganaste");
+      return setMensaje("¡Ganaste!");
     } else {
-      return setMensaje("no ganaste");
+      return setMensaje("Perdiste :(");
     }
   }
 
@@ -49,11 +49,14 @@ export default function App() {
 
   return (
     <div className="App">
-      <h3>el número actual es: {b} </h3>
-      <p>el numero que sigue es: {c} </p>
-      <button onClick={ResultadoMayor}> Mayor </button>
-      <button onClick={ResultadoMenor}> Menor </button>
-      <h4>Resultado: {mensaje}</h4>
+      {/* <h3>el número actual es: {b} </h3>
+      <p>el numero que sigue es: {c} </p> */}
+      <p>El número actual es</p>
+      <div className="numero-actual">{b}</div>
+      <p>El número que sigue es:</p>
+      <button className="btn-MM" onClick={ResultadoMenor}> Menor </button>
+      <button className="btn-MM" onClick={ResultadoMayor}> Mayor </button>
+      <h4>{mensaje}</h4>
     </div>
   );
 }

@@ -10,9 +10,9 @@ export default function App() {
     <div className="App">
       <div className="contenedor-inicio">
         <div className="contenedor-inicio-texto">
-          <h2>Welcome to</h2>
-          <h1>RODOLFO</h1>
-          <h3>page</h3>
+          <h2 className="texto-inicio">Welcome to</h2>
+          <h1 id="rodolfo">RODOLFO</h1>
+          <h3 className="texto-inicio">page</h3>
         </div>
       </div>
 
@@ -31,7 +31,7 @@ export default function App() {
 
       <div className="contenedor-divisor moneda">
         <img src={Gotas} />
-        <h2> Rodolfokeins? </h2>
+        <h2> ¿Te acuerdas de Rodolfo? Volvió en forma de monedas! </h2>
         <article>
           {" "}
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -44,11 +44,15 @@ export default function App() {
         </article>
       </div>
 
+      <hr />
+
       <div className="contenedor-divisor">
         <h2>Adivina donde esta la bola</h2>
         <article> asdf sad fasd f</article>
         <Adivina />
       </div>
+
+      <hr />
 
       <div className="contenedor-divisor">
         <h2>Mayor o menor</h2>
@@ -56,8 +60,10 @@ export default function App() {
         <MayorMenor />
       </div>
 
+      <hr />
+
       <div className="contenedor-divisor">
-        <h2>Mayor o menor</h2>
+        <h2>Piedra, Papel o Ronchi</h2>
         <article> asdf sad fasd f</article>
         <PPR />
       </div>
